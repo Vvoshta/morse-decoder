@@ -38,7 +38,21 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-    // write your solution here
+    function decode(expr) {
+    let toNumber = {
+        '**********': ' ',
+    };
+
+    let str = "";
+    
+    Object.keys(MORSE_TABLE).map(element => toNumber[element.replaceAll('.', '10').replaceAll('-', '11').padStart(10, '0')] = MORSE_TABLE[element]);
+    
+    for (let i = 0; i < expr.length; i += 10) {
+        str += toNumber[expr.slice(i, i + 10)];
+    };
+
+    return str;
+}
 }
 
 module.exports = {
