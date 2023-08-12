@@ -38,7 +38,6 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-    function decode(expr) {
     let toNumber = {
         '**********': ' ',
     };
@@ -52,7 +51,6 @@ function decode(expr) {
     };
 
     return str;
-}
 }
 
 module.exports = {
